@@ -35,6 +35,10 @@ alias sour="source ~/.bashrc"
 
 export PATH="$PATH:~/bin:~/.settings/bin:~/.local/bin"
 
+# kube-ps1 prompt
+. ./kube-ps1.sh
+PS1='[\u@\h \W $(kube_ps1)]\$ '
+
 docker-tags() {
     arr=("$@")
 
