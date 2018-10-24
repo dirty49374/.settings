@@ -1,0 +1,9 @@
+#!/bin/bash
+
+first_pod=$(podid $@)
+args=${@:2}
+
+echo "kubectl exec -it $first_pod $args -- /bin/sh"
+echo "================================================================================="
+kubectl exec -it $first_pod ${@:2} -- /bin/sh
+
