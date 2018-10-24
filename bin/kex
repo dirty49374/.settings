@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$#" -eq 0 ]; then
+    echo "usage: kex pod_prefix [-n namespace]"
+    exit 1
+fi
+
 first_pod=$(podid $@)
 args=${@:2}
 
