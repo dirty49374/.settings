@@ -54,7 +54,7 @@ list_contexts() {
   cur="$(current_context)"
 
   local yellow darkbg normal
-  yellow=$(tput setaf 11 || true)
+  yellow=$(tput setaf 3 || true)
   darkbg=$(tput setab 0 || true)
   normal=$(tput sgr0 || true)
 

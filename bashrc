@@ -1,3 +1,6 @@
+#!/bin/bash
+
+export PATH="$PATH:~/bin:~/.settings/bin:~/.local/bin"
 
 # kubernetes
 
@@ -22,9 +25,9 @@ alias kdelf="kubectl delete -f"
 
 alias kgc="kubectl config get-contexts"
 alias kuc="kubectl config use-context"
-
-alias klog-alb="kubectl logs -n kube-system $(kubectl get po -n kube-system | egrep -o 'alb-ingress[a-zA-Z0-9-]+')"
-alias klog-edns="kubectl logs $(kubectl get po | egrep -o 'external-dns-[a-zA-Z0-9-]+')"
+ 
+alias klog-alb='kubectl logs -n kube-system $(kubectl get po -n kube-system | egrep -o 'alb-ingress[a-zA-Z0-9-]+')'
+alias klog-edns='kubectl logs $(kubectl get po | egrep -o 'external-dns-[a-zA-Z0-9-]+')'
 
 
 alias kc=kubectx
@@ -33,10 +36,11 @@ alias kn=kubens
 # bashrc
 alias sour="source ~/.bashrc"
 
-export PATH="$PATH:~/bin:~/.settings/bin:~/.local/bin"
+
+. ~/.settings/kube-ps1.sh
 
 # kube-ps1 prompt
-. ./kube-ps1.sh
+
 PS1='[\u@\h \W $(kube_ps1)]\$ '
 
 docker-tags() {
