@@ -12,6 +12,7 @@ alias kgs="kubectl get svc"
 alias kgn="kubectl get nodes"
 alias kgpa="kubectl get pods --all-namespaces"
 
+alias kd="kubectl describe"
 alias kdp="kubectl describe pod"
 alias kds="kubectl describe svc"
 alias kdn="kubectl describe nodes"
