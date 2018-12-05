@@ -1,5 +1,5 @@
 #!/bin/bash
 
 first_pod=$(podid external-dns -n default)
-kubectl logs $first_pod --tail 100 -f
+kubectl logs -n default $first_pod --tail 100 -f
 

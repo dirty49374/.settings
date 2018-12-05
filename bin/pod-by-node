@@ -1,0 +1,4 @@
+#!/bin/bash
+
+kubectl get pod --all-namespaces -o=jsonpath='{range .items[*]}{.status.hostIP}{"\t\t"}{.status.podIP}{"\t\t"}{.metadata.namespace}{"\t\t"}{.metadata.name}{"\n"}{end}' | sort
+

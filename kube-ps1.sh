@@ -160,6 +160,7 @@ _kube_ps1_symbol() {
     *)
       KUBE_PS1_SYMBOL="k8s"
   esac
+  KUBE_PS1_SYMBOL="k8s"
 
   if [[ "${KUBE_PS1_SYMBOL_USE_IMG}" == true ]]; then
     KUBE_PS1_SYMBOL="${KUBE_PS1_SYMBOL_IMG}"

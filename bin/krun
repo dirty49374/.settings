@@ -1,0 +1,6 @@
+#!/bin/bash
+
+podname=`basename $1`
+cmd=${@:2}
+
+kubectl run $podname -it --rm --image $1 -- $cmd
