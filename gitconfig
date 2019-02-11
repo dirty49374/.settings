@@ -8,7 +8,7 @@
 	tree	= log --graph --decorate --pretty=oneline --abbrev-commit
 	lg	= log --graph --pretty=oneline --decorate --abbrev-commit
 	l	= log --graph --pretty=oneline --decorate --abbrev-commit
-	pll	= pull --rebase
+	pl	= pull --rebase
 	unpack-refs = "!bash -c 'IFS=$'\\''\\n'\\''; for f in $(git show-ref); do /bin/echo ''Writing  '' $(echo $f | cut -c42-); echo $(echo $f | cut -c1-40) > \"${GIT_DIR:-.git}/$(echo $f | cut -c42-)\"; done'"
 
 
