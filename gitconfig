@@ -1,0 +1,15 @@
+[alias]
+	orphan	= !git log --pretty=oneline --abbrev-commit --graph --decorate `git reflog $1 | cut -d ' ' -f 1`
+	ci 	= commit
+	lc	= log ORIG_HEAD.. --stat --no-merges
+	llog	= log --date=local
+	changes	= diff --name-status -r
+	diffstat = diff --stat -r
+	tree	= log --graph --decorate --pretty=oneline --abbrev-commit
+	lg	= log --graph --pretty=oneline --decorate --abbrev-commit
+	l	= log --graph --pretty=oneline --decorate --abbrev-commit
+	pll	= pull --rebase
+	unpack-refs = "!bash -c 'IFS=$'\\''\\n'\\''; for f in $(git show-ref); do /bin/echo ''Writing  '' $(echo $f | cut -c42-); echo $(echo $f | cut -c1-40) > \"${GIT_DIR:-.git}/$(echo $f | cut -c42-)\"; done'"
+
+
+# mklink c:\Users\segv7\.gitconfig C:\Users\segv7\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\swshin\.settings\gitconfig

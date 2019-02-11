@@ -44,7 +44,7 @@ alias sour="source ~/.bashrc"
 
 # kube-ps1 prompt
 
-PS1='[\u@\h $(kube_ps1) \W>\$ '
+PS1='[\u@\h $(kube_ps1) \W> '
 
 docker-tags() {
     arr=("$@")
