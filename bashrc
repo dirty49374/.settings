@@ -8,14 +8,14 @@ alias k="kubectl"
 
 alias kg="kubectl get"
 alias kgp="kubectl get pod"
-alias kgd="kubectl get deploy"
+alias kgd="kubectl get deployment"
 alias kgs="kubectl get svc"
 alias kgn="kubectl get nodes"
 alias kgpa="kubectl get pods --all-namespaces"
 
 alias kd="kubectl describe"
 alias kdp="kubectl describe pod"
-alias kdd="kubectl describe deploy"
+alias kdd="kubectl describe deployment"
 alias kds="kubectl describe svc"
 alias kdn="kubectl describe nodes"
 

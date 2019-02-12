@@ -1,14 +1,25 @@
+[core]
+	fileMode = false
+	editor	= vim
+
 [alias]
-	orphan	= !git log --pretty=oneline --abbrev-commit --graph --decorate `git reflog $1 | cut -d ' ' -f 1`
+	s	= status
+	f	= fetch
+	l	= log --graph --pretty=oneline --decorate --abbrev-commit
 	ci 	= commit
+	pl	= pull --ff-only
+	pll	= pull --rebase
+
 	lc	= log ORIG_HEAD.. --stat --no-merges
 	llog	= log --date=local
-	changes	= diff --name-status -r
-	diffstat = diff --stat -r
 	tree	= log --graph --decorate --pretty=oneline --abbrev-commit
 	lg	= log --graph --pretty=oneline --decorate --abbrev-commit
-	l	= log --graph --pretty=oneline --decorate --abbrev-commit
-	pl	= pull --rebase
+
+	changes	= diff --name-status -r
+	diffstat = diff --stat -r
+	orp	= !git log --pretty=oneline --abbrev-commit --graph --decorate `git reflog $1 | cut -d ' ' -f 1`
+	orpk	= !gitk `git reflog $1 | cut -d ' ' -f 1`
+
 	unpack-refs = "!bash -c 'IFS=$'\\''\\n'\\''; for f in $(git show-ref); do /bin/echo ''Writing  '' $(echo $f | cut -c42-); echo $(echo $f | cut -c1-40) > \"${GIT_DIR:-.git}/$(echo $f | cut -c42-)\"; done'"
 
 
