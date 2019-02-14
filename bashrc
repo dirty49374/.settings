@@ -43,13 +43,16 @@ alias sour="source ~/.bashrc"
 . ~/.settings/kube-ps1.sh
 . /etc/bash_completion.d/git-prompt
 
-function git_ps1 {
-  [ -d .git ] && git name-rev --name-only @
+function use-kube-ps1 {
+  PS1='[\u@\h \W $(kube_ps1)> '
+}
+
+function use-git-ps1 {
+  PS1='[\u@\h \W\e[34m$(__git_ps1)\e[0m> '
 }
 
 # kube-ps1 prompt
-
-PS1='[\u@\h $(kube_ps1) \W$(__git_ps1)> '
+use-kube-ps1
 
 docker-tags() {
     arr=("$@")
