@@ -36,21 +36,49 @@ alias klog-edns='kubectl logs $(kubectl get po | egrep -o 'external-dns-[a-zA-Z0
 alias kc=kubectx
 alias kn=kubens
 
+alias g="git"
+alias gaa="git add -A"
+alias gf="git fetch -n"
+alias gp="git pull --ff-only"
+alias gs="git status"
+alias gl="git l -10"
+alias gd="git diff"
+alias gdh="git diff HEAD"
+
+alias gstart="git checkout -b"
+
 # bashrc
 alias sour="source ~/.bashrc"
 
 
 . ~/.settings/kube-ps1.sh
-. /etc/bash_completion.d/git-prompt
+#. /etc/bash_completion.d/git-prompt
 
-function ps1-kube {
+_git_ps1() {
+	git rev-parse --abbrev-ref HEAD
+}
+ps1-kube() {
   PS1='[\u@\h $(kube_ps1) \W> '
+  export _PS1_TYPE=kube
+}
+ps1-min() {
+  PS1='[\u@\h \W> '
+  export _PS1_TYPE=git
+}
+ps1-git() {
+  PS1='[\u@\h (\e[34m$(_git_ps1)\e[0m) \W> '
+  export _PS1_TYPE=git
 }
 
-function ps1-git {
-  PS1='[\u@\h \e[34m$(__git_ps1)\e[0m \W> '
-}
-ps1-git
+if [ "$_PS1_TYPE" = "git" ]; then
+  ps1-git
+elif [ "$_PS1_TYPE" = "kube" ]; then
+  ps1-kube
+elif [ "$_PS1_TYPE" = "min" ]; then
+  ps1-min
+else
+  ps1-git 
+fi
 
 docker-tags() {
     arr=("$@")
