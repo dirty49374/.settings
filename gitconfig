@@ -32,6 +32,7 @@
 	addx        = update-index --chmod=+x
 
 	acm			= !git add -A && git commit -m
+	acwip			= !git add -A && git commit -m \"WIP: `git rev-parse --abbrev-ref HEAD`\"
 	unpack-refs = "!bash -c 'IFS=$'\\''\\n'\\''; for f in $(git show-ref); do /bin/echo ''Writing  '' $(echo $f | cut -c42-); echo $(echo $f | cut -c1-40) > \"${GIT_DIR:-.git}/$(echo $f | cut -c42-)\"; done'"
 
 

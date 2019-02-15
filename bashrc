@@ -50,7 +50,7 @@ function ps1-kube {
 function ps1-git {
   PS1='[\u@\h \e[34m$(__git_ps1)\e[0m \W> '
 }
-ps1-kube
+ps1-git
 
 docker-tags() {
     arr=("$@")
