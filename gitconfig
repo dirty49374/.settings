@@ -1,4 +1,5 @@
 [core]
+	autocrlf    = false
 	fileMode    = false
 	editor      = vim
 
@@ -14,6 +15,10 @@
 	pl          = pull --ff-only
 	pll         = pull --rebase
 	la 			= !git config -l | grep alias | cut -c 7-
+	aa 			= add -A
+
+	ra			= rebase --abort
+	rc			= rebase --continue
 
 	lc          = log ORIG_HEAD.. --stat --no-merges
 	llog        = log --date=local
