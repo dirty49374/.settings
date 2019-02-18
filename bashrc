@@ -45,6 +45,7 @@ alias gl="git l -10"
 alias gd="git diff"
 alias gdh="git diff HEAD"
 alias gam="git commit --amend"
+alias gacgam="git add -A && git commit --amend"
 alias gpp="git push --set-upstream origin \$(git rev-parse --abbrev-ref HEAD)"
 
 alias gstart="git checkout -b"
