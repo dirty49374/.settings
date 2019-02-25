@@ -44,6 +44,8 @@ alias gs="git status"
 alias gl="git l -10"
 alias gd="git diff"
 alias gdh="git diff HEAD"
+alias gcm="git add -A && git commit -m"
+alias gacm="git add -A && git commit -m"
 alias gam="git commit --amend"
 alias gacgam="git add -A && git commit --amend"
 alias gpp="git push --set-upstream origin \$(git rev-parse --abbrev-ref HEAD)"
@@ -57,7 +59,10 @@ alias vib="vi ~/.settings/bashrc"
 alias vig="vi ~/.settings/gitconfig"
 
 . ~/.settings/kube-ps1.sh
-. /etc/bash_completion.d/git-prompt
+
+if [ -f "/etc/bash_completion.d/git-prompt" ]; then
+  . /etc/bash_completion.d/git-prompt
+fi
 
 #_git_ps1() {
 #  if [ "$(git rev-parse --is-inside-work-tree 2>&1)" = "true" ]; then
