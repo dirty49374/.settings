@@ -56,7 +56,13 @@ alias gpull="git pull --rebase"
 alias gstart="git checkout -b"
 
 # bashrc
-alias sour="source ~/.bashrc"
+reload-bash() {
+  if [ -f ~/.bash_profile ]; then
+      source ~/.bash_profile
+  elif [ -f ~/.bashrc ]; then
+      source ~/.bashrc
+  fi
+}
 
 alias vib="vi ~/.settings/bashrc"
 alias vig="vi ~/.settings/gitconfig"
