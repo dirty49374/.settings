@@ -49,9 +49,9 @@ alias gacm="git add -A && git commit -m"
 alias gam="git commit --amend"
 alias gacgam="git add -A && git commit --amend"
 
-alias gph="git push --set-upstream origin \$(git rev-parse --abbrev-ref HEAD)"
-alias gplf="git pull --ff-only"
-alias gplb="git pull --rebase"
+alias gpus="git push --set-upstream origin \$(git rev-parse --abbrev-ref HEAD)"
+alias gpul="git pull --ff-only"
+alias gpull="git pull --rebase"
 
 alias gstart="git checkout -b"
 
