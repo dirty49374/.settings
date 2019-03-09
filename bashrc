@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH="$PATH:~/bin:~/.settings/bin:~/.local/bin"
+export PATH="$HOME/bin:$HOME/.settings/bin:$HOME/local/bin:$PATH"
 
 # kubernetes
 
