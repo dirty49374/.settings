@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "* building namespace json..."
+json=$(kubectl get namespace $1 -ojson | jq 'del(.spec.finalizers[] | select(. == "kubernetes") )')
+
+echo "* launch kubectl proxy at 45678 port ..."
+kubectl proxy -p 45678 &
+
+sleep 3
+
+echo "* sending namespace finalizer patch to api server ..."
+curl -k -H "Content-Type: application/json" -X PUT --data-binary "$json" http://localhost:45678/api/v1/namespaces/$1/finalize
+
+echo "\n* killing kubectl proxy"
+kill %1
+

@@ -37,3 +37,8 @@
 
 
 # mklink c:\Users\segv7\.gitconfig C:\Users\segv7\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\swshin\.settings\gitconfig
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
