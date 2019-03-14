@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH="$PATH:~/bin:~/.settings/bin:~/.local/bin"
+export PATH="$HOME/bin:$HOME/.settings/bin:$HOME/local/bin:$PATH"
 
 # kubernetes
 
@@ -44,24 +44,35 @@ alias gs="git status"
 alias gl="git l -10"
 alias gd="git diff"
 alias gdh="git diff HEAD"
-alias gcam="git commit --amend"
-alias gcm="git commit -m"
-alias gacmm="git add -A && (git log -1 --pretty=%B | git commit -F -)"
-alias gacam="git add -A && git commit --amend"
-alias gpu="git push --set-upstream origin \$(git rev-parse --abbrev-ref HEAD)"
-alias gplf="git pull --ff-only"
-alias gplr="git pull --rebase"
+
+alias gcm="git add -A && git commit -m"
+alias gacm="git add -A && git commit -m"
+alias gam="git commit --amend"
+alias gacgam="git add -A && git commit --amend"
+
+alias gpus="git push --set-upstream origin \$(git rev-parse --abbrev-ref HEAD)"
+alias gpul="git pull --ff-only"
+alias gpull="git pull --rebase"
 
 alias gstart="git checkout -b"
 
 # bashrc
-alias sour="source ~/.bashrc"
+reload-bash() {
+  if [ -f ~/.bash_profile ]; then
+      source ~/.bash_profile
+  elif [ -f ~/.bashrc ]; then
+      source ~/.bashrc
+  fi
+}
 
 alias vib="vi ~/.settings/bashrc"
 alias vig="vi ~/.settings/gitconfig"
 
 . ~/.settings/kube-ps1.sh
-. /etc/bash_completion.d/git-prompt
+
+if [ -f "/etc/bash_completion.d/git-prompt" ]; then
+  . /etc/bash_completion.d/git-prompt
+fi
 
 #_git_ps1() {
 #  if [ "$(git rev-parse --is-inside-work-tree 2>&1)" = "true" ]; then
