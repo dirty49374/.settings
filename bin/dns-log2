@@ -1,0 +1,4 @@
+#!/bin/bash
+
+first_pod=$(podid external-dns -n sys-externaldns)
+kubectl logs -n sys-externaldns $first_pod --tail 100 -f

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+kubectl exec -it devtools-0 -n sys-devtools -- /bin/bash
+
