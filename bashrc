@@ -90,7 +90,7 @@ ps1-min() {
   export _PS1_TYPE=git
 }
 ps1-git() {
-  PS1='\h\[\033[34m\]$(__git_ps1)\[\e[0m\] \W>  '
+  PS1='\h\[\033[34m\]$(__git_ps1)\[\e[0m\] \W> '
   export _PS1_TYPE=git
 }
 
