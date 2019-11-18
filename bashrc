@@ -32,6 +32,11 @@ alias kuc="kubectl config use-context"
 alias klog-alb='kubectl logs -n kube-system $(kubectl get po -n kube-system | egrep -o 'alb-ingress[a-zA-Z0-9-]+')'
 alias klog-edns='kubectl logs $(kubectl get po | egrep -o 'external-dns-[a-zA-Z0-9-]+')'
 
+alias kl='kubectl logs'
+alias klm='kubectl logs -c main'
+alias klmm='kubectl logs -c main --tail=100'
+alias kli='kubectl logs -c istio-proxy'
+alias klim='kubectl logs -c istio-proxy --tail=100'
 
 alias kc=kubectx
 alias kn=kubens
